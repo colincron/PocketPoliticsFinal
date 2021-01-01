@@ -1,9 +1,1 @@
 __pycache__/
-accounts/__pycache__/
-config/__pycache__/
-forum/__pycache__/
-politics/__pycache__/
-politics/test_api_file.json
-api_response
-test_api_file.json
-venv/
