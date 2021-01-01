@@ -1,0 +1,672 @@
+{
+    'normalizedInput': {
+        'line1': '8044 25th Avenue North',
+        'city': 'St. Petersburg',
+        'state': 'FL',
+        'zip': '33710'
+    },
+    'kind': 'civicinfo#representativeInfoResponse',
+    'divisions': {
+        'ocd-division/country:us/state:fl/county:pinellas/school_district:pinellas': {
+            'name': 'pinellas'
+        },
+        'ocd-division/country:us/state:fl/cd:13': {
+            'name': "Florida's 13th congressional district",
+            'officeIndices': [3]
+        },
+        'ocd-division/country:us/state:fl/county:pinellas': {
+            'name': 'Pinellas County',
+            'officeIndices': [12, 13, 14, 15, 16, 17]
+        },
+        'ocd-division/country:us': {
+            'name': 'United States',
+            'officeIndices': [0, 1]
+        },
+        'ocd-division/country:us/state:fl/sldl:69': {
+            'name': 'Florida State House district 69',
+            'officeIndices': [7]
+        },
+        'ocd-division/country:us/state:fl/county:pinellas/council_district:7': {
+            'name': 'Pinellas County FL Board of County Commissioners District 7',
+            'officeIndices': [18]
+        },
+        'ocd-division/country:us/state:fl': {
+            'name': 'Florida',
+            'officeIndices': [2, 4, 5, 8, 9, 10, 11]
+        },
+        'ocd-division/country:us/state:fl/place:st_petersburg': {
+            'name': 'St. Petersburg city',
+            'officeIndices': [19]
+        },
+        'ocd-division/country:us/state:fl/sldu:24': {
+            'name': 'Florida State Senate district 24',
+            'officeIndices': [6]
+        }
+    },
+    'offices': [{
+        'name': 'President of the United States',
+        'divisionId': 'ocd-division/country:us',
+        'levels': ['country'],
+        'roles': ['headOfState', 'headOfGovernment'],
+        'officialIndices': [0]
+    }, {
+        'name': 'Vice President of the United States',
+        'divisionId': 'ocd-division/country:us',
+        'levels': ['country'],
+        'roles': ['deputyHeadOfGovernment'],
+        'officialIndices': [1]
+    }, {
+        'name': 'U.S. Senator',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['country'],
+        'roles': ['legislatorUpperBody'],
+        'officialIndices': [2, 3]
+    }, {
+        'name': 'U.S. Representative',
+        'divisionId': 'ocd-division/country:us/state:fl/cd:13',
+        'levels': ['country'],
+        'roles': ['legislatorLowerBody'],
+        'officialIndices': [4]
+    }, {
+        'name': 'Governor of Florida',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'roles': ['headOfGovernment'],
+        'officialIndices': [5]
+    }, {
+        'name': 'Lieutenant Governor of Florida',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'roles': ['deputyHeadOfGovernment'],
+        'officialIndices': [6]
+    }, {
+        'name': 'FL State Senator',
+        'divisionId': 'ocd-division/country:us/state:fl/sldu:24',
+        'levels': ['administrativeArea1'],
+        'roles': ['legislatorUpperBody'],
+        'officialIndices': [7]
+    }, {
+        'name': 'FL State Representative',
+        'divisionId': 'ocd-division/country:us/state:fl/sldl:69',
+        'levels': ['administrativeArea1'],
+        'roles': ['legislatorLowerBody'],
+        'officialIndices': [8]
+    }, {
+        'name': 'FL Chief Financial Officer',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'officialIndices': [9]
+    }, {
+        'name': 'FL Attorney General',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'officialIndices': [10]
+    }, {
+        'name': 'FL Commissioner of Agriculture',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'officialIndices': [11]
+    }, {
+        'name': 'FL Supreme Court Justice',
+        'divisionId': 'ocd-division/country:us/state:fl',
+        'levels': ['administrativeArea1'],
+        'officialIndices': [12, 13, 14, 15, 16, 17, 18]
+    }, {
+        'name': 'Pinellas County Commissioner',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [19, 20, 21]
+    }, {
+        'name': 'Pinellas County Tax Collector',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [22]
+    }, {
+        'name': 'Pinellas County Clerk of Courts',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [23]
+    }, {
+        'name': 'Pinellas County Property Appraiser',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [24]
+    }, {
+        'name': 'Pinellas County Sheriff',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [25]
+    }, {
+        'name': 'Pinellas County Supervisor of Elections',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [26]
+    }, {
+        'name': 'Pinellas County Commissioner',
+        'divisionId': 'ocd-division/country:us/state:fl/county:pinellas/council_district:7',
+        'levels': ['administrativeArea2'],
+        'officialIndices': [27]
+    }, {
+        'name': 'St. Petersburg Mayor',
+        'divisionId': 'ocd-division/country:us/state:fl/place:st_petersburg',
+        'levels': ['locality'],
+        'officialIndices': [28]
+    }],
+    'officials': [{
+        'name': 'Donald J. Trump',
+        'address': [{
+            'line1': '1600 Pennsylvania Avenue Northwest',
+            'city': 'Washington',
+            'state': 'DC',
+            'zip': '20500'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(202) 456-1111'],
+        'urls': ['https://www.whitehouse.gov/'],
+        'photoUrl': 'https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/PE%20Color.jpg',
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'DonaldTrump'
+        }, {
+            'type': 'Twitter',
+            'id': 'potus'
+        }, {
+            'type': 'YouTube',
+            'id': 'whitehouse'
+        }]
+    }, {
+        'name': 'Mike Pence',
+        'address': [{
+            'line1': '1600 Pennsylvania Avenue Northwest',
+            'city': 'Washington',
+            'state': 'DC',
+            'zip': '20500'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(202) 456-1111'],
+        'urls': ['https://www.whitehouse.gov/'],
+        'photoUrl': 'https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/VPE%20Color.jpg',
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'mikepence'
+        }, {
+            'type': 'Twitter',
+            'id': 'VP'
+        }]
+    }, {
+        'name': 'Marco Rubio',
+        'address': [{
+            'line1': '284 Russell Senate Office Building',
+            'city': 'Washington',
+            'state': 'DC',
+            'zip': '20510'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(202) 224-3041'],
+        'urls': ['https://www.rubio.senate.gov/'],
+        'photoUrl': 'http://bioguide.congress.gov/bioguide/photo/R/R000595.jpg',
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'SenatorMarcoRubio'
+        }, {
+            'type': 'Twitter',
+            'id': 'marcorubio'
+        }, {
+            'type': 'YouTube',
+            'id': 'SenatorMarcoRubio'
+        }, {
+            'type': 'YouTube',
+            'id': 'MarcoRubio'
+        }]
+    }, {
+        'name': 'Rick Scott',
+        'address': [{
+            'line1': '716 Hart Senate Office Building',
+            'city': 'Washington',
+            'state': 'DC',
+            'zip': '20510'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(202) 224-5274'],
+        'urls': ['https://www.rickscott.senate.gov/'],
+        'photoUrl': 'http://www.flgov.com/wp-content/uploads/2013/05/GovernorNEW-682x1024.jpg',
+        'emails': ['help@rickscott.senate.gov'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'RickScottSenOffice'
+        }, {
+            'type': 'Twitter',
+            'id': 'SenRickScott'
+        }, {
+            'type': 'YouTube',
+            'id': 'scottforflorida'
+        }]
+    }, {
+        'name': 'Charlie Crist',
+        'address': [{
+            'line1': '215 Cannon House Office Building',
+            'city': 'Washington',
+            'state': 'DC',
+            'zip': '20515'
+        }],
+        'party': 'Democratic Party',
+        'phones': ['(202) 225-5961'],
+        'urls': ['https://crist.house.gov/'],
+        'photoUrl': 'http://crist.house.gov/images/crist-head.jpg',
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'RepCharlieCrist'
+        }, {
+            'type': 'Twitter',
+            'id': 'RepCharlieCrist'
+        }, {
+            'type': 'YouTube',
+            'id': 'UCVwY7cujoNveYpbB6vC9aKg'
+        }]
+    }, {
+        'name': 'Ron DeSantis',
+        'address': [{
+            'line1': '400 South Monroe Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(850) 717-9337'],
+        'urls': ['https://www.flgov.com/'],
+        'emails': ['governorron.desantis@eog.myflorida.com'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'GovRonDeSantis'
+        }, {
+            'type': 'Twitter',
+            'id': 'RonDeSantisFL'
+        }]
+    }, {
+        'name': 'Jeanette Nuñez',
+        'address': [{
+            'line1': '400 South Monroe Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(850) 488-7146'],
+        'urls': ['https://www.flgov.com/lieutenant-governor-jeanette-nunez/'],
+        'emails': ['ltgovernorjeanette.nunez@eog.myflorida.com'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'LtGovNunez'
+        }, {
+            'type': 'Twitter',
+            'id': 'LtGovNunez'
+        }]
+    }, {
+        'name': 'Jeff Brandes',
+        'address': [{
+            'line1': '416 Senate Building',
+            'line2': '404 South Monroe Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(850) 487-5024'],
+        'urls': ['https://www.flsenate.gov/Senators/S24'],
+        'photoUrl': 'https://www.flsenate.gov/PublishedContent/Senators/2016-2018/Photos/s24_5095.jpg',
+        'emails': ['brandes.jeff.web@flsenate.gov'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'SenatorBrandes'
+        }, {
+            'type': 'Twitter',
+            'id': 'JeffreyBrandes'
+        }]
+    }, {
+        'name': 'Jennifer Webb',
+        'address': [{
+            'line1': '1402 The Capitol',
+            'line2': '402 South Monroe Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Democratic Party',
+        'phones': ['(850) 717-5069'],
+        'urls': ['https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4734&LegislativeTermId=88'],
+        'emails': ['jennifer.webb@myfloridahouse.gov'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'JenniferWebbFL'
+        }]
+    }, {
+        'name': 'Jimmy Patronis',
+        'address': [{
+            'line1': '200 East Gaines Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(877) 693-5236'],
+        'urls': ['https://www.myfloridacfo.com/home.html'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'FLDFS'
+        }, {
+            'type': 'Twitter',
+            'id': 'FLDFS'
+        }]
+    }, {
+        'name': 'Ashley Moody',
+        'address': [{
+            'line1': '400 S Monroe St PL-01',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399-050'
+        }],
+        'party': 'Republican Party',
+        'phones': ['(866) 966-7226'],
+        'urls': ['https://myfloridalegal.com/'],
+        'channels': [{
+            'type': 'Twitter',
+            'id': 'AGAshleyMoody'
+        }]
+    }, {
+        'name': 'Nicole "Nikki" Fried',
+        'address': [{
+            'line1': '400 S Monroe St PL-10',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Democratic Party',
+        'phones': ['(850) 617-7700'],
+        'urls': ['https://www.fdacs.gov/'],
+        'emails': ['Nikki.Fried@FDACS.gov']
+    }, {
+        'name': 'Carlos G. Muñiz',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(850) 488-0007'],
+        'urls': ['https://www.floridasupremecourt.org/Justices/Justice-Carlos-G.-Muniz'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'Ricky Polston',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(850) 488-2361'],
+        'urls': ['https://www.floridasupremecourt.org/Justices/Justice-Ricky-Polston'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'Charles T. Canady',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(850) 410-8092'],
+        'urls': ['https://www.floridasupremecourt.org/Justices/Chief-Justice-Charles-T.-Canady'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'John D. Couriel',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'urls': ['https://www.floridasupremecourt.org/Justices/Justice-John-D.-Couriel'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'Alan Lawson',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(850) 921-1096'],
+        'urls': ['https://www.floridasupremecourt.org/Justices/Justice-Alan-Lawson'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'Jorge Labarga',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(850) 413-8371'],
+        'urls': ['https://www.floridasupremecourt.org/Justices/Justice-Jorge-Labarga'],
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'VACANT',
+        'address': [{
+            'line1': '500 South Duval Street',
+            'city': 'Tallahassee',
+            'state': 'FL',
+            'zip': '32399'
+        }],
+        'party': 'Nonpartisan',
+        'emails': ['publicinformation@flcourts.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'floridasupremecourt'
+        }, {
+            'type': 'Twitter',
+            'id': 'flcourts'
+        }]
+    }, {
+        'name': 'Janet C. Long',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Democratic',
+        'phones': ['(727) 464-3365'],
+        'urls': ['http://www.pinellascounty.org/commission/long.htm'],
+        'emails': ['janetclong@pinellascounty.org']
+    }, {
+        'name': 'Charlie Justice',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Democratic',
+        'phones': ['(727) 464-3363'],
+        'urls': ['http://www.pinellascounty.org/commission/justice.htm'],
+        'emails': ['cjustice@pinellascounty.org']
+    }, {
+        'name': 'Pat Gerard',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Democratic',
+        'phones': ['(727) 464-3360'],
+        'urls': ['http://www.pinellascounty.org/commission/gerard.htm'],
+        'emails': ['pgerard@pinellascounty.org']
+    }, {
+        'name': 'Charles W. Thomas',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Republican',
+        'phones': ['(727) 464-7777'],
+        'urls': ['http://www.taxcollect.com/'],
+        'emails': ['cthomas@taxcollect.com'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'PinellasTC'
+        }, {
+            'type': 'Twitter',
+            'id': 'PinellasTC'
+        }]
+    }, {
+        'name': 'Ken Burke',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Republican',
+        'phones': ['(727) 464-3341'],
+        'urls': ['http://www.pinellasclerk.org/'],
+        'emails': ['kburke@pinellascounty.org'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'PinellasClerk'
+        }, {
+            'type': 'Twitter',
+            'id': 'PinellasClerk'
+        }]
+    }, {
+        'name': 'Mike Twitty',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Republican',
+        'phones': ['(727) 464-3207'],
+        'urls': ['http://www.pcpao.org']
+    }, {
+        'name': 'Bob Gualtieri',
+        'address': [{
+            'line1': '10750 Ulmerton Road',
+            'city': 'Largo',
+            'state': 'FL',
+            'zip': '33778'
+        }],
+        'party': 'Republican',
+        'phones': ['(727) 582-6200'],
+        'urls': ['http://www.pcsoweb.com/'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': 'pinellassheriff'
+        }, {
+            'type': 'Twitter',
+            'id': 'SheriffPinellas'
+        }]
+    }, {
+        'name': 'Deborah Clark',
+        'address': [{
+            'line1': '13001 Starkey Road',
+            'city': 'Largo',
+            'state': 'FL',
+            'zip': '33773'
+        }],
+        'party': 'Republican',
+        'phones': ['(727) 464-6788'],
+        'urls': ['http://www.votepinellas.com/'],
+        'emails': ['election@votepinellas.com'],
+        'channels': [{
+            'type': 'Facebook',
+            'id': '106658219380776'
+        }, {
+            'type': 'Twitter',
+            'id': 'votepinellas'
+        }]
+    }, {
+        'name': 'Kenneth Welch',
+        'address': [{
+            'line1': '315 Court Street',
+            'city': 'Clearwater',
+            'state': 'FL',
+            'zip': '33756'
+        }],
+        'party': 'Democratic',
+        'phones': ['(727) 464-3614'],
+        'urls': ['http://www.pinellascounty.org/commission/KTWelch.htm'],
+        'emails': ['ktwelch@co.pinellas.fl.us']
+    }, {
+        'name': 'Rick Kriseman',
+        'address': [{
+            'line1': '175 5th Street North',
+            'city': 'St. Petersburg',
+            'state': 'FL',
+            'zip': '33701'
+        }],
+        'party': 'Nonpartisan',
+        'phones': ['(727) 893-7201'],
+        'urls': ['http://www.stpete.org/mayor_s_office/index.php'],
+        'photoUrl': 'http://www.stpete.org/mayor_s_office/images/Official_Headshot.jpg',
+        'emails': ['mayor@stpete.org'],
+        'channels': [{
+            'type': 'Twitter',
+            'id': 'Kriseman'
+        }, {
+            'type': 'Facebook',
+            'id': 'KrisemanforMayor'
+        }]
+    }]
+}
