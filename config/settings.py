@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     # local
     'politics',
     'accounts',
-    'forum',
 ]
 
 MIDDLEWARE = [

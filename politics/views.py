@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, View
-from politics.api_handler import ApiHandler
-
-
+from django.views.generic.detail import DetailView
+from politics.google_api_handler import ApiHandler
+from .models import Politician
 
 # Create your views here.
 
@@ -22,9 +22,11 @@ class RepPageView(View):
         GoogleHandler = ApiHandler("https://civicinfo.googleapis.com/civicinfo/v2/representatives?",address,"AIzaSyDprT-PBib6-i5eSdzWxDxVqckzfbyt9DI")
         politician_is = GoogleHandler.create_politician_list()
 
-        
-        # return render(request, self.template_name, {'officials': api_response['officials'],'offices': api_response['offices'],'list': indexed_list})
         return render(request, self.template_name, {'pol_list': politician_is})
 
 class VoterRegView(TemplateView):
     template_name = 'voterreg.html'
+
+class RepDetailView(DetailView):
+    model = Politician
+    template_name = 'rep_detail.html'

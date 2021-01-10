@@ -1,0 +1,12 @@
+.rep-detail-page-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-icon{
+    font-size: xx-large;
+}
+
+.test_rep_page{
+    font-size: xx-small;
+}
