@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, View
 from django.views.generic.detail import DetailView
 from politics.google_api_handler import ApiHandler
+from politics.propublica_api_handler import ProPub_Api_Handler
 from .models import Politician
 
 # Create your views here.
@@ -30,3 +31,14 @@ class VoterRegView(TemplateView):
 class RepDetailView(DetailView):
     model = Politician
     template_name = 'rep_detail.html'
+
+class UpcomingLegView(View):
+    template_name = 'legislation.html'
+
+    def get(self, request):
+        house_handler = ProPub_Api_Handler("https://api.propublica.org/congress/v1/116/house/bills/introduced.json")
+        senate_handler = ProPub_Api_Handler("https://api.propublica.org/congress/v1/116/senate/bills/introduced.json")
+        house_list = house_handler.call_propub_api()
+        senate_list = senate_handler.call_propub_api()
+
+        return render(request, self.template_name, {'house_list': house_list,'senate_list': senate_list})

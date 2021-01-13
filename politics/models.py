@@ -15,7 +15,7 @@ class Politician(models.Model):
     facebook = models.CharField(max_length=50,default="", null=True)
     twitter = models.CharField(max_length=50,default="", null=True)
     youtube = models.CharField(max_length=50, default="", null=True)
-    id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True, unique=True)
 
 class Article(models.Model):
     title = models.CharField(max_length=100, default="", null=True)

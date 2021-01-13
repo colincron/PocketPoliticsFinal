@@ -1,0 +1,32 @@
+.main-leg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-leg a, .main-leg a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.leg-view-h{
+    width: 47%;
+    padding: .5rem;
+}
+
+/* .leg-view-h div{
+    background-color: rgb(0, 100, 255);
+    padding: .5rem;
+    margin: .5rem;
+} */
+
+.leg-view-s{
+    width: 47%;
+    padding: .5rem;
+}
+/* 
+.leg-view-s div{
+    background-color: rgb(0, 100, 255);
+    padding: .5rem;
+    margin: .5rem;
+} */

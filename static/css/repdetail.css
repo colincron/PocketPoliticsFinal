@@ -10,3 +10,10 @@
 .test_rep_page{
     font-size: xx-small;
 }
+
+@media(max-width: 768px){
+    .rep-detail-page-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+}

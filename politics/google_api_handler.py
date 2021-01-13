@@ -1,5 +1,6 @@
 import requests, json
-from politics.models import Politician
+from .models import Politician
+from .propublica_api_handler import ProPub_Api_Handler
 
 class ApiHandler: 
     url = ""
@@ -40,15 +41,19 @@ class ApiHandler:
                             youtube_url = "https://www.youtube.com/channel/" + x['id']
                         else:
                             pass
+                #print(officials[temp_int].get('phones'))
+                official_phone = ""
+                if officials[temp_int].get('phones'):
+                    official_phone = officials[temp_int]['phones'][0]
 
                 p = Politician(
                     officials[temp_int]['name'],
                     offices[i]['name'],
                     officials[temp_int]['party'],
                     officials[temp_int].get('photoUrl'),
-                    officials[temp_int]['phones'][0],
+                    official_phone,
                     None,None,None,None,
-                    facebook_url, twitter_url, youtube_url)
+                    facebook_url, twitter_url, youtube_url,)
                 p.save()
                 pol_list.append(p)
                 i += 1
@@ -71,15 +76,20 @@ class ApiHandler:
                                 youtube_url = "https://www.youtube.com/channel/" + x['id']
                             else:
                                 pass
+                    official_phone = ""
 
+                    if officials[temp_int].get('phones'):
+                        official_phone = officials[temp_int]['phones'][0]
+                    
                     p = Politician(
                         officials[temp_int]['name'],
                         offices[i]['name'],
                         officials[temp_int]['party'],
                         officials[temp_int].get('photoUrl'),
-                        officials[temp_int].get('phones'),
+                        official_phone,
                         None,None,None,None,
                         facebook_url,twitter_url, youtube_url)
+
                     p.save()
                     pol_list.append(p)
                     
