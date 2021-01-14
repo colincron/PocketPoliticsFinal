@@ -11,7 +11,7 @@ class NewsApiHandler:
     def call_news_api(self):
         # today = date.today()
         # today_string=str(today)
-        r = requests.get("http://newsapi.org/v2/top-headlines?sources=associated-press&apiKey=1a13b6e712fc4262b1cd576eb7201e66")
+        r = requests.get("http://newsapi.org/v2/top-headlines?sources=associated-press&apiKey=1a13b6e712fc4262b1cd576eb7201e66", verify=False)
         data = r.text
         parsed = json.loads(data)
         articles = parsed['articles']
@@ -34,3 +34,5 @@ class NewsApiHandler:
             a.save()
             news_list.append(a)
         return news_list
+
+

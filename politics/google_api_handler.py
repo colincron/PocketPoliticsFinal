@@ -13,7 +13,7 @@ class ApiHandler:
         self.api_key = api_key
 
     def call_google_api(self):
-        r = requests.get(self.url+"address="+self.address+"&key="+self.api_key)
+        r = requests.get(self.url+"address="+self.address+"&key="+self.api_key, verify=False)
         data = r.text
         parsed = json.loads(data)
         return parsed
@@ -43,13 +43,15 @@ class ApiHandler:
                             pass
                 #print(officials[temp_int].get('phones'))
                 official_phone = ""
+                if officials[temp_int].get('party'):
+                    official_party = officials[temp_int]['party']
                 if officials[temp_int].get('phones'):
                     official_phone = officials[temp_int]['phones'][0]
 
                 p = Politician(
                     officials[temp_int]['name'],
                     offices[i]['name'],
-                    officials[temp_int]['party'],
+                    official_party,
                     officials[temp_int].get('photoUrl'),
                     official_phone,
                     None,None,None,None,
