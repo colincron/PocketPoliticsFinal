@@ -1,3 +1,7 @@
 __pycache__/
 */__pycache__/
 .env
+api_output.json
+api_tests.py
+done.sh
+text.txt
