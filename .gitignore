@@ -5,3 +5,4 @@ api_output.json
 api_tests.py
 done.sh
 text.txt
+venv/

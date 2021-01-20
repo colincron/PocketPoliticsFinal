@@ -11,6 +11,12 @@ party_choices = (
     ('green_party', 'Green Party'),
     ('libertarian_party', 'Libertarian Party'),
     ('republican_party', 'Republican Party'),
+    ('vermont_progressive', 'Vermont Progressive Party'),
+    ('alliance_party', 'Alliance Party'),
+    ('popular_democratic_party', "Popular Democratic Party"),
+    ('new_progressive','New Progressive Party'),
+    ('citizens_victory_movement', "Citizen's Victory Movement"),
+    ('puerto_rican_independence', 'Puerto Rican Independence Party'),
 )
 
 class StandardUser(AbstractUser):

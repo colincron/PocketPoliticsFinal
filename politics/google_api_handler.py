@@ -2,6 +2,7 @@ import requests, json
 from .models import Politician
 from .propublica_api_handler import ProPub_Api_Handler
 
+
 class ApiHandler: 
     url = ""
     address = ""
@@ -30,8 +31,17 @@ class ApiHandler:
             if len(offices[i]['officialIndices']) == 1:
                 temp_int = offices[i]['officialIndices'][0]
                 
+                photo_url = None
+                if officials[temp_int].get('photoUrl'):
+                    photo_url = officials[temp_int].get('photoUrl')
+                else:
+                    photo_url = 'img/favicon.ico'
+
                 if officials[temp_int].get('channels'):
                     channels = officials[temp_int]['channels']
+                    facebook_url = "#" # this prevents no value being present if politician doesn't have a FB profile
+                    youtube_url = "#"
+                    twitter_url = "#"
                     for x in channels:
                         if x['type'] == "Facebook":
                             facebook_url = "https://www.facebook.com/" + x['id']
@@ -52,7 +62,7 @@ class ApiHandler:
                     officials[temp_int]['name'],
                     offices[i]['name'],
                     official_party,
-                    officials[temp_int].get('photoUrl'),
+                    photo_url,
                     official_phone,
                     None,None,None,None,
                     facebook_url, twitter_url, youtube_url,)
@@ -65,6 +75,9 @@ class ApiHandler:
                 
                 for j in range(0,len(offices[i]['officialIndices'])):
                     temp_int = offices[i]['officialIndices'][j]
+
+                    
+
                     if officials[temp_int].get('channels'):
                         channels = officials[temp_int]['channels']
                         for x in channels:

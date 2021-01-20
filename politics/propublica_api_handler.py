@@ -1,4 +1,5 @@
 import requests, json
+from django.conf import settings
 
 class Legislation():
     number = ""
@@ -19,7 +20,7 @@ class ProPub_Api_Handler:
         self.url = url
     
     def call_propub_api(self):
-        headers_dict = {'X-API-Key':'e1AWczMEUTALnhoRQRa1Ve6vsL1jutTpnMnpwAng'}
+        headers_dict = {'X-API-Key':settings.PRO_PUBLICA_API_KEY}
         r = requests.get(self.url, headers=headers_dict, verify=False)
         data = r.text
         parsed = json.loads(data)
@@ -34,14 +35,3 @@ class ProPub_Api_Handler:
                 )
             bill_list.append(L)
         return bill_list
-    
-        
-
-
-    
-
-if __name__ == "__main__":
-    handler = ProPub_Api_Handler("https://api.propublica.org/congress/v1/116/house/bills/introduced.json")
-    handler2 = ProPub_Api_Handler("https://api.propublica.org/congress/v1/116/senate/bills/introduced.json")
-    handler.call_propub_api()
-    handler2.call_propub_api()

@@ -14,8 +14,6 @@ from pathlib import Path
 import os, environ
 
 env = environ.Env()
-
-# reading .env file
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -150,3 +148,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 AUTH_USER_MODEL = 'accounts.StandardUser'
 LOGIN_REDIRECT_URL = 'userhome'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = 'userhome'
+GOOGLE_API_KEY = env("GOOGLE_API_KEY")
+GOOGLE_URL = env("GOOGLE_URL")
+PRO_PUB_HOUSE = env("PRO_PUB_HOUSE")
+PRO_PUB_SENATE = env("PRO_PUB_SENATE")
+REDDIT_API_URL = env("REDDIT_API_URL")
+PRO_PUBLICA_API_KEY = env("PRO_PUBLICA_API_KEY")
