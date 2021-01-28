@@ -19,13 +19,14 @@ class ApiHandler:
         parsed = json.loads(data)
         return parsed
 
-    def create_politician_list(self):
+    def create_politician_list(self, username):
+        pol_list = []
         parsed = self.call_google_api()
         offices = parsed['offices']
         officials = parsed['officials']
-        pol_list = []
-        i = 0
         
+        i = 0
+        print("CREATE POLITICIAN LIST RUNNING")
         for i in range(0,len(offices)):
 
             if len(offices[i]['officialIndices']) == 1:
@@ -35,7 +36,7 @@ class ApiHandler:
                 if officials[temp_int].get('photoUrl'):
                     photo_url = officials[temp_int].get('photoUrl')
                 else:
-                    photo_url = 'img/favicon.ico'
+                    photo_url = '../../static/img/favicon.ico'
 
                 if officials[temp_int].get('channels'):
                     channels = officials[temp_int]['channels']
@@ -65,7 +66,11 @@ class ApiHandler:
                     photo_url,
                     official_phone,
                     None,None,None,None,
-                    facebook_url, twitter_url, youtube_url,)
+                    facebook_url, 
+                    twitter_url, 
+                    youtube_url,
+                    username
+                    )
                 p.save()
                 pol_list.append(p)
                 i += 1
@@ -76,7 +81,11 @@ class ApiHandler:
                 for j in range(0,len(offices[i]['officialIndices'])):
                     temp_int = offices[i]['officialIndices'][j]
 
-                    
+                    photo_url = None
+                    if officials[temp_int].get('photoUrl'):
+                        photo_url = officials[temp_int].get('photoUrl')
+                    else:
+                        photo_url = '../../static/img/favicon.ico'
 
                     if officials[temp_int].get('channels'):
                         channels = officials[temp_int]['channels']
@@ -100,25 +109,31 @@ class ApiHandler:
                         officials[temp_int]['name'],
                         offices[i]['name'],
                         officials[temp_int]['party'],
-                        officials[temp_int].get('photoUrl'),
+                        photo_url,
                         official_phone,
                         None,None,None,None,
-                        facebook_url,twitter_url, youtube_url)
+                        facebook_url,
+                        twitter_url, 
+                        youtube_url,
+                        username
+                        )
 
                     p.save()
                     pol_list.append(p)
                     
                 i += 1
-                
-                      
-            
+        
         return pol_list
 
+# def call_api_and_save(sender,instance,**kwargs):
+#     r = sender.user
+#     if r.address2:
+#         address = r.address1 + " " + r.address2 + " " + r.city + " " +r.state + " " + r.zip_code
+#     else: 
+#         address = r.address1 + " " + r.city + " " +r.state + " " + r.zip_code
+#     GoogleHandler = ApiHandler(settings.GOOGLE_URL,address,settings.GOOGLE_API_KEY)
+#     politician_list = GoogleHandler.create_politician_list()
 
-if __name__ == "__main__":
-    TO_ENV_GOOGLE_URL = "https://civicinfo.googleapis.com/civicinfo/v2/representatives?"
-    USERS_ADDRESS = "8044 25th Ave N St. Petersburg, FL 33710"
-    TO_ENV_GOOGLE_API = "AIzaSyDprT-PBib6-i5eSdzWxDxVqckzfbyt9DI"
-    GoogleApiHandler = ApiHandler(TO_ENV_GOOGLE_URL,USERS_ADDRESS,TO_ENV_GOOGLE_API)
-    GoogleApiHandler.create_politician_list()
+# post_save.connect(call_api_and_save, sender=StandardUser)
+
     

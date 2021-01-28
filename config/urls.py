@@ -24,5 +24,11 @@ urlpatterns = [
     path('', include('politics.urls')),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    url(r'^oauth/', include('social_django.urls', namespace='social')),
+    #url(r'^oauth/', include('social_django.urls', namespace='social')),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+# handler400 = 'accounts.views.custom_bad_request_view'
+# handler403 = 'accounts.views.custom_permission_denied_view'
+handler404 = 'accounts.views.CustomPageNotFoundView'
+# handler500 = 'accounts.views.custom_error_view'

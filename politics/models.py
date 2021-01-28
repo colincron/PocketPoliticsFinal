@@ -1,4 +1,8 @@
 from django.db import models
+from django.conf import settings
+from django.dispatch import receiver
+from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 
 # Create your models here.
@@ -16,8 +20,14 @@ class Politician(models.Model):
     facebook = models.CharField(max_length=50,default="", null=True)
     twitter = models.CharField(max_length=50,default="", null=True)
     youtube = models.CharField(max_length=50, default="", null=True)
+    constituent = models.CharField(max_length=50)
     id = models.AutoField(primary_key=True, unique=True)
 
+    def __str__(self):
+        return (self.office + " " + self.name)
+    
+    def get_absolute_url(self):
+        return reverse('rep_detail', args=[str(self.id)])
 
 class Article(models.Model):
     title = models.CharField(max_length=100, default="", null=True)

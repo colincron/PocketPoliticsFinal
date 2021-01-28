@@ -14,17 +14,27 @@ class HomePageView(TemplateView):
 class RepPageView(View):
     template_name = 'myreps.html'
 
-
     def get(self, request):
         r = request.user
-        if r.address2:
-            address = r.address1 + " " + r.address2 + " " + r.city + " " +r.state + " " + r.zip_code
-        else: 
-            address = r.address1 + " " + r.city + " " +r.state + " " + r.zip_code
-        GoogleHandler = ApiHandler(settings.GOOGLE_URL,address,settings.GOOGLE_API_KEY)
-        politician_is = GoogleHandler.create_politician_list()
+        print("user requested")
+        print("about to try to make the list")
+        existing_rep_list = Politician.objects.filter(constituent=r.username)
+        print("tried to make the list")
+        print("trying to do the conditional")
+        if existing_rep_list.exists():
+            print("If executed")
+            print(existing_rep_list)
+            return render(request, self.template_name, {'pol_list': existing_rep_list})
+        else:
+            print("else executed")
+            if r.address2:
+                address = r.address1 + " " + r.address2 + " " + r.city + " " +r.state + " " + r.zip_code
+            else: 
+                address = r.address1 + " " + r.city + " " +r.state + " " + r.zip_code
+            GoogleHandler = ApiHandler(settings.GOOGLE_URL,address,settings.GOOGLE_API_KEY)
+            politician_is = GoogleHandler.create_politician_list(r.username)
 
-        return render(request, self.template_name, {'pol_list': politician_is})
+            return render(request, self.template_name, {'pol_list': politician_is})
 
 class VoterRegView(TemplateView):
     template_name = 'voterreg.html'

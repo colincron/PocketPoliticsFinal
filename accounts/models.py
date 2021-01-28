@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from politics.google_api_handler import ApiHandler
+
+
 
 # Create your models here.
 
@@ -21,7 +20,7 @@ party_choices = (
 
 class StandardUser(AbstractUser):
     address1 = models.CharField( max_length=50 )
-    address2 = models.CharField( max_length=50, blank=True )
+    address2 = models.CharField( max_length=50, blank=True, null=True )
     city = models.CharField( max_length=25 )
     state = models.CharField( max_length=2 )
     zip_code = models.CharField( max_length=5 )

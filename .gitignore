@@ -1,8 +1,14 @@
 __pycache__/
 */__pycache__/
-.env
+config/.env
 api_output.json
 api_tests.py
 done.sh
 text.txt
 venv/
+venv/*
+api_output.json
+api_tests.py
+text.txt
+db.sqlite3
+

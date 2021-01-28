@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.forms import PasswordChangeForm
 from .forms import CustomUserCreationForm, CustomUserEditForm
 from politics.news_api_handler import NewsApiHandler
 from .voter_registration import url_dict
@@ -8,7 +10,13 @@ from politics.reddit_api_handler import RedditApiHandler
 from django.views.generic.edit import UpdateView
 from django.conf import settings
 
-# Create your views here.
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('password_success')
+
+def password_success(request):
+    return render(request, 'registration/password_success.html', {})
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -38,3 +46,6 @@ class CustomUserEditView(UpdateView):
 
     def get_object(self):
         return self.request.user 
+
+def CustomPageNotFoundView(request,exception):
+    return render(template_name="custom_404.html")
