@@ -9,13 +9,11 @@
 
 .left-div {
     width: 20%;
-    border: 1px solid black;
     white-space: normal;
 }
 
 .center-div {
     width: 50%;
-    /* border: 1px solid black; */
     white-space: normal;
     overflow-y:auto;
     max-height:900px;
@@ -54,7 +52,7 @@
     max-height:900px;
 }
 
-@media(max-width: 768px){
+@media(max-width: 800px){
     .main-section {
         display: flex;
         flex-direction: column;
@@ -66,7 +64,6 @@
         margin: .5rem auto;
         width: 80%;
         height: 200px;
-        border: 1px solid black;
         white-space: normal;
     }
     
@@ -74,12 +71,53 @@
         margin: .5rem auto;
         width: 80%;
         min-height: 300px;
-        border: 1px solid black;
         white-space: normal;
     }
     
+    .doc-button {
+        width: 80%;
+    }
+
     .right-div {
-        border: 1px solid black;
+        white-space: normal;
+        width: 80%;
+        margin: .5rem auto;
+        height: 500px;
+    }
+}
+
+@media(max-width: 450px){
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    
+    .left-div {
+        margin: .5rem auto;
+        width: 80%;
+        height: 200px;
+        white-space: normal;
+    }
+    
+    .center-div {
+        margin: .5rem auto;
+        width: 80%;
+        min-height: 300px;
+        white-space: normal;
+    }
+
+    .reddit-image {
+        max-height: 50px;
+    }
+
+    .doc-button {
+        font-size: smaller;
+        width: 80%;
+    }
+    
+    .right-div {
         white-space: normal;
         width: 80%;
         margin: .5rem auto;

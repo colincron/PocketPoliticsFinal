@@ -5,6 +5,7 @@ from politics.google_api_handler import ApiHandler
 from politics.propublica_api_handler import ProPub_Api_Handler
 from .models import Politician
 from django.conf import settings
+from datetime import datetime
 
 # Create your views here.
 
@@ -16,21 +17,23 @@ class RepPageView(View):
 
     def get(self, request):
         r = request.user
-        print("user requested")
-        print("about to try to make the list")
+        today = str(datetime.today().strftime('%Y-%m-%d'))
         existing_rep_list = Politician.objects.filter(constituent=r.username)
-        print("tried to make the list")
-        print("trying to do the conditional")
+        created = " "
         if existing_rep_list.exists():
-            print("If executed")
-            print(existing_rep_list)
+            created = str(existing_rep_list[0].created_at)
+
+        print("Today: %s" % today)
+        print("Created_at: %s" % created)
+        
+        if existing_rep_list.exists() and created == today:
+            print("If executed... pulling from DB")
             return render(request, self.template_name, {'pol_list': existing_rep_list})
         else:
-            print("else executed")
-            if r.address2:
-                address = r.address1 + " " + r.address2 + " " + r.city + " " +r.state + " " + r.zip_code
-            else: 
-                address = r.address1 + " " + r.city + " " +r.state + " " + r.zip_code
+            print("else executed... deleting database entries")
+            existing_rep_list.delete()
+            print("new api request")
+            address = r.address1 + " " + r.city + " " +r.state + " " + r.zip_code
             GoogleHandler = ApiHandler(settings.GOOGLE_URL,address,settings.GOOGLE_API_KEY)
             politician_is = GoogleHandler.create_politician_list(r.username)
 
@@ -53,3 +56,4 @@ class UpcomingLegView(View):
         senate_list = senate_handler.call_propub_api()
 
         return render(request, self.template_name, {'house_list': house_list,'senate_list': senate_list})
+

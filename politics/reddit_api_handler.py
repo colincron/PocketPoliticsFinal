@@ -8,7 +8,7 @@ class RedditApiHandler:
         self.url = url
     
     def call_reddit_api(self):
-        r = requests.get(self.url, headers={'User-agent': 'pocket_politics'}, verify=False)
+        r = requests.get(self.url, headers={'User-agent': 'pocket_politics -- contact:colin@colincron.com'}, verify=False)
         data = r.text
         parsed = json.loads(data)
         posts = parsed['data']['children']

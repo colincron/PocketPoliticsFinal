@@ -8,6 +8,7 @@ from django.contrib.auth.models import AbstractUser
 party_choices = (
     ('democratic_party', 'Democratic Party'),
     ('green_party', 'Green Party'),
+    ('independent_party', 'Independent Party'),
     ('libertarian_party', 'Libertarian Party'),
     ('republican_party', 'Republican Party'),
     ('vermont_progressive', 'Vermont Progressive Party'),
@@ -26,3 +27,4 @@ class StandardUser(AbstractUser):
     zip_code = models.CharField( max_length=5 )
     dob = models.DateField(blank=True, null=True)
     pol_preference = models.CharField(max_length=30, choices=party_choices, default='')
+    created_at = models.DateTimeField(auto_now_add=True)

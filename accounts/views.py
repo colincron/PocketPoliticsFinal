@@ -33,10 +33,11 @@ class UserHomePageView(TemplateView):
         url = ""
         RedditHandler = RedditApiHandler(settings.REDDIT_API_URL)
         reddit_list = RedditHandler.call_reddit_api()
+        username = r.username
         if r.state in url_dict:
             url = url_dict[r.state]
         
-        return render(request, self.template_name, {'news_list': news_list,'reddit_list': reddit_list, 'voter_url': url})
+        return render(request, self.template_name, {'news_list': news_list,'reddit_list': reddit_list, 'voter_url': url, 'username': username})
 
 
 class CustomUserEditView(UpdateView):
@@ -47,5 +48,11 @@ class CustomUserEditView(UpdateView):
     def get_object(self):
         return self.request.user 
 
+class ConstitutionView(TemplateView):
+    template_name='constitution.html'
+
+class IndependenceView(TemplateView):
+    template_name='independence.html'
+
 def CustomPageNotFoundView(request,exception):
-    return render(template_name="custom_404.html")
+    return render(request, template_name="custom_404.html")
