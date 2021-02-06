@@ -30,3 +30,23 @@
     padding: .5rem;
     margin: .5rem;
 } */
+
+@media(max-width: 600px){
+    .main-leg{
+        flex-direction: column;
+        /* justify-content: space-between; */
+        width: 100%;
+    }
+    .leg-view-h{
+        white-space: normal;
+        overflow-y:auto;
+        max-height:500px;
+        min-width: 400px;
+    }
+    .leg-view-s{
+        white-space: normal;
+        overflow-y:auto;
+        max-height:500px;
+        min-width: 400px;
+    }
+}
